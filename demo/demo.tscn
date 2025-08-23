@@ -7,17 +7,17 @@
 [ext_resource type="Resource" uid="uid://cvb65hfs2lrxo" path="res://addons/sphynx_motion_blur_toolkit/guertin/shader_stages/guertin_neighbor_max_stage.tres" id="2_gicau"]
 [ext_resource type="Resource" uid="uid://bidsfymvdyhek" path="res://addons/sphynx_motion_blur_toolkit/guertin/shader_stages/guertin_overlay_stage.tres" id="3_hr8rx"]
 [ext_resource type="Resource" uid="uid://rp3mpjmisoyh" path="res://addons/sphynx_motion_blur_toolkit/pre_blur_processing/resources/default_object_movement_component.tres" id="3_rk61m"]
-[ext_resource type="Script" path="res://addons/sphynx_motion_blur_toolkit/guertin/guertin_motion_blur.gd" id="4_ihvrq"]
+[ext_resource type="Script" uid="uid://c5jewnyvlca7j" path="res://addons/sphynx_motion_blur_toolkit/guertin/guertin_motion_blur.gd" id="4_ihvrq"]
 [ext_resource type="Resource" uid="uid://c8ulad7utgrg7" path="res://addons/sphynx_motion_blur_toolkit/pre_blur_processing/shader_stages/pre_blur_processing_stage.tres" id="4_wgrvi"]
 [ext_resource type="Resource" uid="uid://dipvwksvqb3dm" path="res://addons/sphynx_motion_blur_toolkit/guertin/shader_stages/guertin_tile_max_x_stage.tres" id="5_7tef1"]
-[ext_resource type="Script" path="res://addons/sphynx_motion_blur_toolkit/pre_blur_processing/pre_blur_processor.gd" id="5_8kfws"]
+[ext_resource type="Script" uid="uid://cb6iwvwjmmqru" path="res://addons/sphynx_motion_blur_toolkit/pre_blur_processing/pre_blur_processor.gd" id="5_8kfws"]
 [ext_resource type="Resource" uid="uid://bxfg45ubc2pv7" path="res://addons/sphynx_motion_blur_toolkit/guertin/shader_stages/guertin_tile_max_y_stage.tres" id="6_vy2yv"]
 [ext_resource type="Resource" uid="uid://bqehecsdgt70s" path="res://addons/sphynx_motion_blur_toolkit/guertin/shader_stages/guertin_tile_variance_stage.tres" id="7_y084v"]
 [ext_resource type="Resource" uid="uid://dw0r1gbmf1hrb" path="res://addons/sphynx_enhanced_compositor_toolkit/debug/shader_stages/debug_overlay_shader_stage.tres" id="13_rbyyi"]
-[ext_resource type="Script" path="res://addons/sphynx_enhanced_compositor_toolkit/debug/post_process_debug.gd" id="14_8qoen"]
-[ext_resource type="Script" path="res://demo/camera_3d.gd" id="15_peffh"]
-[ext_resource type="Script" path="res://addons/sphynx_motion_blur_toolkit/base_classes/mb_compositor.gd" id="16_khify"]
-[ext_resource type="Script" path="res://demo/basic_strafe.gd" id="17_33ie6"]
+[ext_resource type="Script" uid="uid://bi6xhl7lpiu4n" path="res://addons/sphynx_enhanced_compositor_toolkit/debug/post_process_debug.gd" id="14_8qoen"]
+[ext_resource type="Script" uid="uid://p266nn7u8e1v" path="res://demo/camera_3d.gd" id="15_peffh"]
+[ext_resource type="Script" uid="uid://d16n7afywm20" path="res://addons/sphynx_motion_blur_toolkit/base_classes/mb_compositor.gd" id="16_khify"]
+[ext_resource type="Script" uid="uid://xhlnav7ttw0t" path="res://demo/basic_strafe.gd" id="17_33ie6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rlupr"]
 
@@ -42,6 +42,12 @@ camera_movement_component = ExtResource("1_fmu1v")
 object_movement_component = ExtResource("3_rk61m")
 debug = false
 shader_stages/pre_blur_processor_stage = ExtResource("4_wgrvi")
+samples = 16
+intensity = 1.0
+center_fade = 0.0
+framerate_independent = true
+uncapped_independence = false
+target_constant_framerate = 30.0
 
 [sub_resource type="CompositorEffect" id="CompositorEffect_f15mr"]
 resource_local_to_scene = false
@@ -69,6 +75,12 @@ shader_stages/tile_max_x_stage = ExtResource("5_7tef1")
 shader_stages/tile_max_y_stage = ExtResource("6_vy2yv")
 shader_stages/neighbor_max_stage = ExtResource("2_gicau")
 shader_stages/tile_variance_stage = ExtResource("7_y084v")
+samples = 16
+intensity = 1.0
+center_fade = 0.0
+framerate_independent = true
+uncapped_independence = false
+target_constant_framerate = 30.0
 
 [sub_resource type="CompositorEffect" id="CompositorEffect_uofvx"]
 resource_local_to_scene = false
@@ -83,6 +95,12 @@ draw_debug = false
 debug_page = 0
 debug = true
 shader_stages/overlay_stage = ExtResource("13_rbyyi")
+samples = 16
+intensity = 1.0
+center_fade = 0.0
+framerate_independent = true
+uncapped_independence = false
+target_constant_framerate = 30.0
 
 [sub_resource type="Compositor" id="Compositor_7qsp2"]
 compositor_effects = Array[CompositorEffect]([SubResource("CompositorEffect_a4e4w"), SubResource("CompositorEffect_f15mr"), SubResource("CompositorEffect_uofvx")])
