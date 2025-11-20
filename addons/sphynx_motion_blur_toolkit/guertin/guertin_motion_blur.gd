@@ -206,7 +206,7 @@ func _render_callback_2(render_size : Vector2i, render_scene_buffers : RenderSce
 		],
 		[],
 		Vector3i(x_groups, y_groups, 1), 
-		"Overlay result", 
+		"Copy result", 
 		view)
 	
 	rd.draw_command_end_label()
